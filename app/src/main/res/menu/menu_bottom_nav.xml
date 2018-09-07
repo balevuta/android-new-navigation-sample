@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/tabFragmentFirst"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_alert_white_24dp"
+        android:title="Meet"
+        android:checked="true"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/tabFragmentSecond"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_alert_white_24dp"
+        android:title="Match"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/tabFragmentThird"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_alert_white_24dp"
+        android:title="Inbox"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/tabFragmentFouth"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_alert_white_24dp"
+        android:title="Rooms"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/tabFragmentFifth"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_alert_white_24dp"
+        android:title="More"
+        app:showAsAction="collapseActionView" />
+</menu>

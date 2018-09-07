@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/onBoardingFragment">
+
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="balevuta.com.android_navigation.OnBoardingFragment"
+        android:label="OnBoarding"
+        tools:layout="@layout/fragment_on_boarding">
+        <action
+            android:id="@+id/action_onboarding_to_signin"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_onboarding_to_signup"
+            app:destination="@id/signUpFragment" />
+        <deepLink app:uri="www.example.com/onboarding" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="balevuta.com.android_navigation.SignInFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_sign_in">
+        <deepLink app:uri="www.example.com/signin" />
+        <action
+            android:id="@+id/action_signin_to_tabFragment"
+            app:destination="@id/tabFragment" />
+        <action
+            android:id="@+id/action_signin_to_tabActivity"
+            app:destination="@id/tabActivity" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="balevuta.com.android_navigation.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signup_to_home"
+            app:destination="@+id/homeFragment"
+            app:popUpTo="@+id/onBoardingFragment" />
+        <deepLink app:uri="www.example.com/signup" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="balevuta.com.android_navigation.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="data"
+            android:defaultValue="default value"
+            app:argType="string" />
+        <deepLink app:uri="www.example.com/home" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/tabFragment"
+        android:name="balevuta.com.android_navigation.TabFragment"
+        android:label="Tab"
+        tools:layout="@layout/fragment_tab">
+        <argument
+            android:name="data"
+            android:defaultValue="default value"
+            app:argType="string" />
+        <deepLink app:uri="www.example.com/about" />
+    </fragment>
+    <activity
+        android:id="@+id/tabActivity"
+        android:name="balevuta.com.android_navigation.TabActivity"
+        android:label="TabActivity" />
+</navigation>

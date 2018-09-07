@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tab_navigation"
+    app:startDestination="@id/tabFragmentFirst">
+
+    <fragment
+        android:id="@+id/tabFragmentFirst"
+        android:name="balevuta.com.android_navigation.TabFragmentFirst"
+        android:label="Meet">
+        <action
+            android:id="@+id/action1Tab"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/tabFragmentSecond"
+        android:name="balevuta.com.android_navigation.TabFragmentSecond"
+        android:label="Match">
+        <action
+            android:id="@+id/action2Tab"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/tabFragmentThird"
+        android:name="balevuta.com.android_navigation.TabFragmentThird"
+        android:label="Inbox">
+        <action
+            android:id="@+id/action3Tab"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/tabFragmentFouth"
+        android:name="balevuta.com.android_navigation.TabFragmentFouth"
+        android:label="Rooms">
+        <action
+            android:id="@+id/action4Tab"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/tabFragmentFifth"
+        android:name="balevuta.com.android_navigation.TabFragmentFifth"
+        android:label="More">
+        <action
+            android:id="@+id/action5Tab"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+</navigation>
