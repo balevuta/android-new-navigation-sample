@@ -49,11 +49,15 @@
         android:label="Home"
         tools:layout="@layout/fragment_home">
         <argument
-            android:name="data"
+            android:name="profileId"
             android:defaultValue="default value"
             app:argType="string" />
         <deepLink app:uri="www.example.com/home" />
-
+        <deepLink app:uri="www.example.com/home/{myargs}" />
+        <deepLink
+            android:autoVerify="true"
+            app:uri="www.example.com/.*/{id}" />
+        <deepLink app:uri="android-app://example.com/detail/id" />
     </fragment>
     <fragment
         android:id="@+id/tabFragment"
@@ -69,5 +73,10 @@
     <activity
         android:id="@+id/tabActivity"
         android:name="balevuta.com.android_navigation.TabActivity"
-        android:label="TabActivity" />
+        android:label="TabActivity">
+        <argument
+            android:name="skip"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </activity>
 </navigation>

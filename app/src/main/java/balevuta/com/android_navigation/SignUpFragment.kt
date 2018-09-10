@@ -20,18 +20,18 @@ class SignUpFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         signUp.setOnClickListener {
-            val name = signup_name.text.toString()
-            if (name.isNotEmpty()) {
-                val bundle = Bundle()
-                bundle.putString("data", name)
-                Navigation.findNavController(view).navigate(R.id.action_signup_to_home, bundle)
+            val profileId = signup_name.text.toString()
+
+            if (profileId.isNotEmpty()) {
+//                val bundle = Bundle()
+//                bundle.putString("data", profileId)
+
+                val directions = SignUpFragmentDirections.action_signup_to_home()
+                directions.setProfileId(profileId)
+                Navigation.findNavController(view).navigate(directions)
             } else {
                 Toast.makeText(activity, "name should not empty", Toast.LENGTH_LONG).show()
             }
         }
-
-//        view.findViewById<Button>(R.id.signUp)?.setOnClickListener(
-//                Navigation.createNavigateOnClickListener(R.id.next_action, bundle)
-//        )
     }
 }

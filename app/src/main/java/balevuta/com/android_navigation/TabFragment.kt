@@ -20,9 +20,9 @@ class TabFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val username = arguments?.let {
-            val safeArgs = HomeFragmentArgs.fromBundle(it)
-            safeArgs.data
+            TabFragmentArgs.fromBundle(it).data
         }
         userNameText.text = username
 

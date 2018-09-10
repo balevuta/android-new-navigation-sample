@@ -1,11 +1,17 @@
 package balevuta.com.android_navigation
 
+import android.app.Activity
+import android.app.Notification
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.NotificationCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.NavDeepLinkBuilder
 
 
 class HomeFragment : Fragment() {
@@ -23,14 +29,23 @@ class HomeFragment : Fragment() {
 
 //        val username = arguments?.getString("data")
 
-        val username = arguments?.let {
-            val safeArgs = HomeFragmentArgs.fromBundle(it)
-            safeArgs.data
+        val profileId = arguments?.let {
+            HomeFragmentArgs.fromBundle(it).profileId
         }
+        nameTextx.text = profileId;
 
-        val args = HomeFragmentArgs.fromBundle(arguments)
+    }
 
-        nameTextx.text = args.data;
+    fun onPushNotif() {
+        val notificationBuilder = NotificationCompat.Builder(context!!, "1")
 
+        val deepLinkBuilder = NavDeepLinkBuilder(context!!)
+                .setGraph(R.navigation.main_navigation)
+                .setDestination(R.id.homeFragment)
+                .setArguments(bundleOf(Pair("name", "balevuta")))
+
+        val pendingIntent = deepLinkBuilder.createPendingIntent()
+
+        notificationBuilder.setContentIntent(pendingIntent)
     }
 }

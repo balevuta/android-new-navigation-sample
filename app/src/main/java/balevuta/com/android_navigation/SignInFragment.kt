@@ -21,18 +21,24 @@ class SignInFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         skipBtn.setOnClickListener {
-//            val intent = Intent(activity, TabActivity::class.java)
+            //            val intent = Intent(activity, TabActivity::class.java)
 //            startActivity(intent)
 
-            findNavController().navigate(R.id.action_signin_to_tabActivity)
+            val direction = SignInFragmentDirections.action_signin_to_tabActivity()
+            direction.setSkip(true)
+            findNavController().navigate(direction)
         }
 
         signIn.setOnClickListener {
             val textData: String = email.text.toString();
             if (textData.isNotEmpty()) {
-                val bundle = Bundle()
-                bundle.putString("data", textData)
-                findNavController().navigate(R.id.action_signin_to_tabFragment, bundle)
+
+//                val bundle = Bundle()
+//                bundle.putString("data", textData)
+
+                val directions = SignInFragmentDirections.action_signin_to_tabFragment()
+                directions.setData(textData)
+                findNavController().navigate(directions)
             } else {
                 Toast.makeText(activity, "name should not empty", Toast.LENGTH_LONG).show()
             }

@@ -3,6 +3,7 @@ package balevuta.com.android_navigation
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -31,6 +32,12 @@ class TabActivity : AppCompatActivity() {
 //                return false
 //            }
 //        })
+
+        val isSkip = intent.extras?.let {
+            TabActivityArgs.fromBundle(it).skip
+        }
+
+        Toast.makeText(this, "is skip from sign in? $isSkip", Toast.LENGTH_SHORT).show()
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
